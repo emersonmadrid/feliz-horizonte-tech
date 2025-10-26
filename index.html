@@ -3,273 +3,809 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IngeniaTech - Soluciones con Visión de Negocio</title>
+    <title>IngeniaTech - Transformo tu Negocio con Tecnología Inteligente</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f7f9fc;
-            color: #333;
-            line-height: 1.7;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
         .container {
-            width: 90%;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 24px;
         }
+        
+        /* Header */
         header {
-            background-color: #ffffff;
-            padding: 20px 0;
-            border-bottom: 1px solid #eef;
-            position: sticky;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
-        header .container {
+        
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        .logo {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #007aff;
-            text-decoration: none;
-        }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
-        nav li { margin-left: 30px; }
-        nav a {
-            text-decoration: none;
-            color: #555;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        nav a:hover { color: #007aff; }
-
-        .hero {
-            background: #1a3b5d;
-            color: #ffffff;
-            padding: 120px 0;
-            text-align: center;
-        }
-        .hero h1 {
-            color: #ffffff;
-            font-size: 3em;
-            margin-bottom: 20px;
-            font-weight: 800;
-            line-height: 1.2;
-        }
-        .hero p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            color: rgba(255,255,255,0.85);
-        }
-        .cta-button {
-            background-color: #007aff;
-            color: #ffffff;
-            padding: 18px 35px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 8px;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
-        }
-        .cta-button:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 122, 255, 0.4);
-        }
-
-        .section {
-            padding: 80px 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            color: #1a3b5d;
+            padding: 20px 0;
         }
         
-        /* Tu Arma Secreta */
-        .dual-vision {
-            background-color: #ffffff;
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        
+        nav a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 15px;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 160px 0 120px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 32px;
             border-radius: 12px;
-            padding: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 16px;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 24px;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        /* Value Proposition */
+        .value-prop {
+            background: linear-gradient(to bottom, #f8fafc, white);
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+        
+        .value-icon {
+            font-size: 64px;
+            margin-bottom: 24px;
+        }
+        
+        .value-card h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #0f172a;
+        }
+        
+        .value-card p {
+            color: #475569;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        /* Case Study */
+        .case-study {
+            background: #0f172a;
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .case-study-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .case-study-header {
             display: flex;
             align-items: center;
-            gap: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            gap: 24px;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .dual-vision-icon {
-            font-size: 4em;
-            flex-shrink: 0;
+        
+        .case-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
         }
-        .dual-vision h2 {
-            font-size: 2.2em;
-            margin-top: 0;
-            margin-bottom: 15px;
+        
+        .case-study-header h3 {
+            font-size: 32px;
+            font-weight: 800;
         }
-        .dual-vision p {
-            font-size: 1.1em;
-        }
-        .dual-vision strong {
-            color: #007aff;
-        }
-
-        /* Caso de Éxito */
-        .case-study {
-            background-color: #1a3b5d;
-            color: #f7f9fc;
-            padding: 60px;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(26, 59, 93, 0.2);
-        }
-        .case-study h3 {
-            font-size: 2.2em;
-            color: #ffffff;
-            margin-top: 0;
-            border-bottom: 2px solid #007aff;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-        .case-study-grid {
+        
+        .solutions-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
         }
-        .case-study-item {
-            background: rgba(255,255,255,0.05);
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid #007aff;
+        
+        .solution-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
         }
-        .case-study-item h4 {
-            font-size: 1.3em;
-            margin-top: 0;
-            margin-bottom: 10px;
-            color: #ffffff;
+        
+        .solution-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-4px);
         }
-        .case-study-item p {
-            margin: 0;
-            font-size: 1em;
-            color: rgba(255,255,255,0.85);
+        
+        .solution-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
         }
+        
+        .solution-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .solution-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
         .testimonial {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 32px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-text {
+            font-size: 18px;
             font-style: italic;
-            font-size: 1.2em;
-            margin-top: 30px;
-            padding: 20px;
-            background: rgba(0,0,0,0.1);
-            border-radius: 8px;
-            text-align: center;
+            line-height: 1.7;
+            margin-bottom: 16px;
         }
-        .testimonial span {
-            display: block;
-            font-style: normal;
+        
+        .testimonial-author {
             font-weight: 600;
-            margin-top: 10px;
-            font-size: 0.9em;
-            color: #007aff;
+            color: #667eea;
         }
-
+        
+        /* Services */
+        .services {
+            background: white;
+            padding: 100px 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+        
+        .service-card p {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .service-features li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        
         /* Footer */
         footer {
-            background-color: #1a3b5d;
-            color: #f4f7f6;
+            background: #0f172a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about h4 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+        
+        .footer-links h5 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #667eea;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
             text-align: center;
-            padding: 40px 0;
-            margin-top: 80px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .value-card {
+                grid-template-columns: 1fr;
+                padding: 32px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 16px;
+            }
         }
     </style>
 </head>
 <body>
-
     <header>
         <div class="container">
-            <a href="#" class="logo">IngeniaTech</a>
-            <nav>
-                <ul>
-                    <li><a href="#ventaja">Mi Ventaja</a></li>
-                    <li><a href="#caso-exito">Proyectos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
+            <div class="header-content">
+                <div class="logo">IngeniaTech</div>
+                <nav>
+                    <ul>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#caso-exito">Casos de Éxito</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>¿Procesos manuales están frenando tu negocio?</h1>
-            <p>Dejo de hacer que pierdas dinero. Diseño y construyo las herramientas tecnológicas exactas que tu empresa necesita para crecer.</p>
-            <a href="#contacto" class="cta-button">Agenda tu Diagnóstico Gratuito</a>
-        </div>
-    </section>
-
-    <section id="ventaja" class="section">
-        <div class="container">
-            <div class="dual-vision">
-                <div class="dual-vision-icon">🧠</div>
-                <div class="dual-vision-text">
-                    <h2>No soy solo un programador. Soy tu Socio Estratégico.</h2>
-                    <p>La mayoría de desarrolladores te entregan código. Yo te entrego resultados.</p>
-                    <p>Como <strong>Ingeniero Empresarial que programa</strong>, entiendo tu estrategia, tus costos y tus clientes. Luego, construyo la solución (en C#, Go, SQL o Web) que ataca directamente tu problema de negocio.</p>
+            <div class="hero-content">
+                <div class="hero-badge">🚀 Ingeniero Empresarial + Desarrollador Full Stack</div>
+                <h1>Transformo Ideas de Negocio en Soluciones Tecnológicas Reales</h1>
+                <p>No solo programo. Entiendo tu estrategia, analizo tus costos y diseño sistemas que realmente mueven la aguja en tu empresa.</p>
+                <div class="cta-buttons">
+                    <a href="#contacto" class="btn btn-primary">Agenda tu Diagnóstico Gratuito</a>
+                    <a href="#caso-exito" class="btn btn-secondary">Ver Casos de Éxito</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="caso-exito" class="section" style="background-color: #f7f9fc;">
+    <section class="stats">
         <div class="container">
-            <h2 class="section-title">Caso de Éxito: "Feliz Horizonte"</h2>
-            <div class="case-study">
-                <h3>El Reto: Digitalización de un Consultorio</h3>
-                <p style="font-size: 1.1em;">El consultorio psicológico "Feliz Horizonte" perdía citas por no tener agendamiento 24/7 y su gestión de pacientes era manual y lenta.</p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Proyectos Entregados a Tiempo</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Automatización Implementada</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Años de Experiencia</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="value-prop">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">¿Por qué soy diferente?</h2>
+                <p class="section-subtitle">No soy solo un programador más. Soy tu aliado estratégico con visión de negocio.</p>
+            </div>
+            
+            <div class="value-card">
+                <div>
+                    <div class="value-icon">🧠</div>
+                    <h3>Visión de Negocio + Expertise Técnico</h3>
+                    <p>Como <span class="highlight">Ingeniero Empresarial</span>, primero entiendo tu modelo de negocio, tus procesos y tus objetivos. Luego construyo la solución técnica exacta que necesitas.</p>
+                    <p><strong>No es solo código, es estrategia digitalizada.</strong></p>
+                </div>
+                <div>
+                    <div class="skills-list">
+                        <span class="skill-tag">C# / .NET</span>
+                        <span class="skill-tag">Go (Golang)</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">HTML/CSS/JS</span>
+                        <span class="skill-tag">APIs REST</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Google Ads</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="caso-exito" class="case-study">
+        <div class="container">
+            <div class="section-header" style="color: white;">
+                <h2 class="section-title" style="color: white;">Caso de Éxito Real: Feliz Horizonte</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Cómo digitalicé completamente un consultorio psicológico y multipliqué sus ingresos</p>
+            </div>
+            
+            <div class="case-study-card">
+                <div class="case-study-header">
+                    <div class="case-logo">🌅</div>
+                    <div>
+                        <h3>Feliz Horizonte</h3>
+                        <p style="color: rgba(255,255,255,0.7); margin: 0;">Consultorio Psicológico</p>
+                    </div>
+                </div>
                 
-                <div class="case-study-grid">
-                    <div class="case-study-item">
-                        <h4>💬 Solución 1: Chatbot WhatsApp</h4>
-                        <p>Desarrollé un chatbot que agenda citas, responde preguntas frecuentes y captura pacientes 24/7.</p>
+                <p style="font-size: 18px; margin-bottom: 32px; color: rgba(255,255,255,0.9);">
+                    <strong>El Reto:</strong> El consultorio perdía pacientes por no tener disponibilidad 24/7. La gestión de citas, historias clínicas y pagos era 100% manual. No tenían presencia digital efectiva.
+                </p>
+                
+                <h4 style="font-size: 24px; font-weight: 700; margin-bottom: 24px;">Soluciones Implementadas:</h4>
+                
+                <div class="solutions-grid">
+                    <div class="solution-card">
+                        <div class="solution-icon">💬</div>
+                        <h4>Chatbot Inteligente WhatsApp</h4>
+                        <p>Sistema automatizado que agenda citas, responde preguntas frecuentes y captura leads 24/7. Integrado con su calendario y base de datos.</p>
                     </div>
-                    <div class="case-study-item">
-                        <h4>🖥️ Solución 2: Sistema de Gestión</h4>
-                        <p>Diseñé (UI/UX) y programé un sistema interno para la gestión de pacientes, historias y pagos.</p>
+                    
+                    <div class="solution-card">
+                        <div class="solution-icon">🖥️</div>
+                        <h4>Sistema de Gestión Interno</h4>
+                        <p>Diseñé la interfaz (UI/UX) y programé un sistema completo para gestión de pacientes, historias clínicas, seguimiento y control de pagos.</p>
                     </div>
-                    <div class="case-study-item">
-                        <h4>📈 Solución 3: Marketing Digital</h4>
-                        <p>Implementé y gestioné campañas de Google Ads, optimizando la inversión y atrayendo nuevos pacientes.</p>
+                    
+                    <div class="solution-card">
+                        <div class="solution-icon">📈</div>
+                        <h4>Marketing Digital</h4>
+                        <p>Implementé y optimicé campañas de Google Ads con ROI medible, atrayendo pacientes nuevos constantemente con inversión controlada.</p>
                     </div>
                 </div>
-
+                
                 <div class="testimonial">
-                    "Entendió perfectamente las necesidades de mi consultorio y la solución tecnológica fue perfecta. Ahora el negocio funciona en automático."
-                    <span>- Directora, Feliz Horizonte</span>
+                    <p class="testimonial-text">"Emerson entendió perfectamente las necesidades de mi consultorio. No solo programó, realmente pensó en mi negocio. La solución tecnológica fue perfecta y ahora el consultorio funciona en automático. Recomendado al 100%."</p>
+                    <div class="testimonial-author">— Directora, Feliz Horizonte</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="section" style="background-color: #ffffff;">
-        <div class="container" style="text-align: center;">
-            <h2 class="section-title">¿Listo para escalar?</h2>
-            <p style="font-size: 1.2em; max-width: 700px; margin: 0 auto 40px;">
-                Te ofrezco una **Auditoría Tecnológica GRATIS de 30 minutos**.
-                Analizaré tu negocio y te diré los 3 puntos clave donde la tecnología puede ahorrarte más dinero. Sin compromiso.
-            </p>
-            <a href="mailto:tu-emersonmadrid@felizhorizonte.pe" class="cta-button">¡Quiero mi Auditoría!</a>
+    <section id="servicios" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">¿Cómo puedo ayudarte?</h2>
+                <p class="section-subtitle">Soluciones completas adaptadas a las necesidades reales de tu negocio</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Automatización de Procesos</h3>
+                    <p>Identifico procesos manuales que te hacen perder tiempo y dinero, y los automatizo con soluciones a medida.</p>
+                    <ul class="service-features">
+                        <li>Análisis de procesos actuales</li>
+                        <li>Sistemas de gestión internos</li>
+                        <li>Integraciones con herramientas existentes</li>
+                        <li>Reportes y dashboards en tiempo real</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Chatbots y Atención 24/7</h3>
+                    <p>Chatbots inteligentes para WhatsApp, web o redes sociales que atienden a tus clientes cuando tú no puedes.</p>
+                    <ul class="service-features">
+                        <li>Agendamiento automático</li>
+                        <li>Respuestas a FAQs</li>
+                        <li>Captura de leads</li>
+                        <li>Integración con CRM</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Desarrollo de Software a Medida</h3>
+                    <p>Construyo sistemas específicos para tu negocio: desde aplicaciones web hasta sistemas de gestión complejos.</p>
+                    <ul class="service-features">
+                        <li>Diseño UI/UX profesional</li>
+                        <li>Backend robusto y escalable</li>
+                        <li>Bases de datos optimizadas</li>
+                        <li>Seguridad y respaldos</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Marketing Digital + Tech</h3>
+                    <p>No solo programo, también sé cómo atraer clientes. Implemento y gestiono campañas con visión técnica y comercial.</p>
+                    <ul class="service-features">
+                        <li>Google Ads optimizado</li>
+                        <li>Landing pages de conversión</li>
+                        <li>Tracking y análisis de datos</li>
+                        <li>ROI medible</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Auditoría Tecnológica</h3>
+                    <p>Analizo tu negocio y te muestro exactamente dónde la tecnología puede ayudarte a crecer y ahorrar costos.</p>
+                    <ul class="service-features">
+                        <li>Análisis de procesos</li>
+                        <li>Identificación de oportunidades</li>
+                        <li>Plan de acción priorizado</li>
+                        <li>Estimación de ROI</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Consultoría Estratégica</h3>
+                    <p>Te asesoro sobre qué tecnologías implementar, cuándo hacerlo y cómo maximizar el retorno de inversión.</p>
+                    <ul class="service-features">
+                        <li>Roadmap tecnológico</li>
+                        <li>Selección de herramientas</li>
+                        <li>Gestión de proyectos</li>
+                        <li>Capacitación a tu equipo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para llevar tu negocio al siguiente nivel?</h2>
+                <p>Te ofrezco una <strong>Auditoría Tecnológica GRATUITA de 30 minutos</strong>. Analizaré tu negocio y te mostraré exactamente cómo la tecnología puede ahorrarte dinero y multiplicar tus resultados.</p>
+                <p style="font-size: 16px; opacity: 0.9; margin-bottom: 32px;">Sin compromisos. Sin letra pequeña. Solo valor real.</p>
+                <a href="mailto:emersonmadrid@felizhorizonte.pe" class="btn btn-primary" style="color: #667eea;">Agenda tu Auditoría Gratuita</a>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 IngeniaTech Soluciones. Diseñado y construido por EMERSON MADRID.</p>
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h4>IngeniaTech</h4>
+                    <p>Transformando negocios con tecnología inteligente. Ingeniero Empresarial con expertise en desarrollo de software, automatización y marketing digital.</p>
+                    <p style="margin-top: 16px; font-size: 14px;">📍 Lima, Perú</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h5>Servicios</h5>
+                    <ul>
+                        <li><a href="#servicios">Automatización</a></li>
+                        <li><a href="#servicios">Chatbots</a></li>
+                        <li><a href="#servicios">Desarrollo</a></li>
+                        <li><a href="#servicios">Consultoría</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h5>Contacto</h5>
+                    <ul>
+                        <li><a href="mailto:emersonmadrid@felizhorizonte.pe">Email</a></li>
+                        <li><a href="#contacto">Auditoría Gratuita</a></li>
+                        <li><a href="#caso-exito">Casos de Éxito</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 IngeniaTech. Diseñado y desarrollado por Emerson Madrid | Ingeniero Empresarial + Full Stack Developer</p>
+            </div>
         </div>
     </footer>
 
