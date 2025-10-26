@@ -687,6 +687,137 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* --- INICIO: CÓDIGO AÑADIDO PARA MÓVIL --- */
+        
+        /* --- ESTILOS PARA EL MENÚ MÓVIL --- */
+        .menu-toggle {
+            display: none; /* Oculto en escritorio */
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #0f172a;
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        /* --- REGLAS RESPONSIVAS (LAS MÁS IMPORTANTES) --- */
+
+        @media (max-width: 768px) {
+            /* Hacemos visible el botón hamburguesa */
+            .menu-toggle {
+                display: block;
+            }
+            
+            /* Preparamos la navegación principal para móvil */
+            header nav {
+                position: fixed;
+                top: 0;
+                /* Empezamos fuera de la pantalla */
+                left: -100%; 
+                width: 100%;
+                height: 100vh;
+                background: white;
+                transition: left 0.3s ease-in-out;
+                z-index: 1000;
+                
+                /* Centramos los links */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            /* ESTADO ABIERTO: Cuando el menú está abierto */
+            header nav.menu-open {
+                left: 0; /* Lo movemos a la pantalla */
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+            
+            /* Ocultamos los links de escritorio */
+            nav ul {
+                display: none;
+            }
+            
+            /* Mostramos los links de móvil (cuando está abierto) */
+            header nav.menu-open ul {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            header nav.menu-open ul a {
+                font-size: 24px;
+                font-weight: 600;
+                color: #1e293b;
+            }
+        }
+
+        /* --- REGLAS PARA PANTALLAS PEQUEÑAS (FUENTES Y ESPACIOS) --- */
+        @media (max-width: 600px) {
+            /* Hero */
+            .hero { padding: 120px 0 60px; }
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 17px; }
+
+            /* Títulos de Sección */
+            .section-title { font-size: 32px; }
+            .section-subtitle { font-size: 16px; }
+            .section-header { margin-bottom: 40px; }
+
+            /* Padding General */
+            .experience, .case-study, .services, .cta-section {
+                padding: 80px 0;
+            }
+            
+            /* Tarjetas */
+            .experience-card, .case-study-card, .service-card {
+                padding: 32px;
+            }
+            
+            .experience-header {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .experience-icon { font-size: 48px; }
+            .experience-header h3, .case-study-header h3 { font-size: 26px; }
+
+            .trust-logos { gap: 24px; }
+            .trust-logo { padding: 12px 20px; font-size: 18px; }
+
+            /* CTA */
+            .cta-section h2 { font-size: 32px; }
+            .cta-section p { font-size: 17px; }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-credentials {
+                align-items: center;
+            }
+        }
+        /* --- FIN: CÓDIGO AÑADIDO PARA MÓVIL --- */
+
     </style>
 </head>
 <body>
@@ -702,7 +833,13 @@
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
-            </div>
+                
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                </div>
         </div>
     </header>
 
@@ -711,7 +848,7 @@
             <div class="hero-content">
                 <div>
                     <div class="hero-badge">⭐ MBA + Ingeniero Empresarial y Sistemas</div>
-                    <h1>16 Años Desarrollando <span class="hero-highlight">Soluciones Empresariales</span> que Funcionan</h1>
+                    <h1>16 Años Desarrollando <span class="hero-highlight">Soluciones Empresariales</span> que FuncionAN</h1>
                     <p>He construido sistemas críticos para Telefónica, Claro, Clínica San Pablo y Repsol. Ahora pongo toda esa experiencia enterprise al servicio de tu negocio.</p>
                     <div class="cta-buttons">
                         <a href="#contacto" class="btn btn-primary">Agenda tu Consultoría Gratuita</a>
@@ -1000,7 +1137,7 @@
                 
                 <p style="font-size: 14px; margin-top: 24px; opacity: 0.7;">
                     📧 emersonmadrid@felizhorizonte.pe | 📍 Lima, Perú
-                </p>
+                </s
             </div>
         </div>
     </section>
@@ -1060,5 +1197,22 @@
         </div>
     </footer>
 
-</body>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('header nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('menu-open');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Cierra el menú si haces clic en un enlace
+        document.querySelectorAll('header nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('menu-open');
+                menuToggle.classList.remove('active');
+            });
+        });
+    </script>
+    </body>
 </html>
