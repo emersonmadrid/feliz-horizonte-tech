@@ -63,6 +63,90 @@ body::before {
     }
 }
 
+/* Professional WhatsApp Button - Brand Aligned */
+.whatsapp-button {
+    position: fixed;
+    bottom: 16px;
+    /* Closer to corner */
+    right: 16px;
+    /* Closer to corner */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 245, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 8px 32px rgba(0, 245, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.whatsapp-button.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.whatsapp-button:hover {
+    background: rgba(0, 245, 255, 0.25);
+    border-color: rgba(0, 245, 255, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 245, 255, 0.4);
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 8px rgba(0, 245, 255, 0.6));
+}
+
+.whatsapp-text {
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .whatsapp-button {
+        bottom: 16px;
+        right: 16px;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .whatsapp-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-button {
+        bottom: 16px;
+        right: 16px;
+        padding: 14px;
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        justify-content: center;
+    }
+
+    .whatsapp-text {
+        display: none;
+    }
+}
+
 /* Floating Particles */
 #particles-container {
     position: fixed;
@@ -159,49 +243,6 @@ body::before {
 
     .metric-label {
         font-size: 9px;
-    }
-}
-
-/* Scroll to Top Button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary), var(--tertiary));
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: var(--dark);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    box-shadow: 0 4px 20px rgba(0, 245, 255, 0.3);
-}
-
-.scroll-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.scroll-to-top:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 245, 255, 0.5);
-}
-
-@media (max-width: 768px) {
-    .scroll-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
     }
 }
 
@@ -1208,8 +1249,9 @@ footer {
         flex: 1;
         display: flex;
         flex-direction: column;
-        padding-bottom: 40px;
-        /* Bottom padding to fill space */
+        justify-content: space-evenly;
+        /* Better distribution than margin-top: auto */
+        padding-bottom: 20px;
     }
 
     .hero-badge {
@@ -1239,8 +1281,8 @@ footer {
     .hero-buttons {
         flex-direction: column;
         gap: 14px;
-        margin-top: auto;
-        /* Push to bottom */
+        margin-top: 30px;
+        /* Balanced spacing instead of auto */
         padding-bottom: 30px;
         /* Extra space at bottom */
     }

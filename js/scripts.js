@@ -42,28 +42,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll to Top Button
-const scrollToTopBtn = document.createElement('button');
-scrollToTopBtn.className = 'scroll-to-top';
-scrollToTopBtn.innerHTML = '↑';
-scrollToTopBtn.setAttribute('aria-label', 'Volver arriba');
-document.body.appendChild(scrollToTopBtn);
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.add('visible');
-    } else {
-        scrollToTopBtn.classList.remove('visible');
-    }
-});
-
-scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('nav');
@@ -184,3 +162,16 @@ setInterval(() => {
         }
     });
 }, 50);
+
+// WhatsApp Button - Show only after scrolling past hero
+const whatsappBtn = document.querySelector('.whatsapp-button');
+if (whatsappBtn) {
+    window.addEventListener('scroll', () => {
+        const heroHeight = document.querySelector('.hero')?.offsetHeight || 600;
+        if (window.scrollY > heroHeight * 0.7) {
+            whatsappBtn.classList.add('visible');
+        } else {
+            whatsappBtn.classList.remove('visible');
+        }
+    });
+}
