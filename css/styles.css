@@ -1186,27 +1186,29 @@ footer {
         height: 2px;
     }
 
-    /* Hero - Fill entire viewport without gaps */
+    /* Hero - Distribute content to fill viewport */
     .hero {
         padding-top: 90px;
         padding-bottom: 40px;
         min-height: 100vh;
         display: flex;
-        align-items: flex-start;
-        /* Changed from center to start */
+        align-items: center;
         text-align: center;
     }
 
     .hero-content {
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        justify-content: space-between;
+        min-height: calc(100vh - 130px);
+        gap: 0;
+        width: 100%;
     }
 
     .hero-badge {
-        font-size: 12px;
-        padding: 8px 16px;
-        margin-bottom: 20px;
+        font-size: 11px;
+        padding: 6px 14px;
+        margin-bottom: 0;
     }
 
     .hero h1 {
