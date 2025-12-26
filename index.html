@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo de Software y Consultoría de Sistemas | Emerson Madrid</title>
     <link rel="stylesheet" href="css/styles.css">
-
+    <!-- Google Fonts: Inter y Outfit para un look más moderno -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -35,7 +40,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div>
+                <div class="reveal fade-up">
                     <div class="hero-badge">⭐ MBA + Ingeniero Empresarial y Sistemas</div>
                     <h1>16 Años Desarrollando <span class="hero-highlight">Soluciones Empresariales</span> que FuncionAN
                     </h1>
@@ -47,7 +52,7 @@
                     </div>
                 </div>
 
-                <div class="hero-stats">
+                <div class="hero-stats reveal fade-left delay-200">
                     <div class="hero-stat">
                         <div class="hero-stat-number">16+</div>
                         <div class="hero-stat-label">Años de Experiencia</div>
@@ -69,30 +74,31 @@
         </div>
     </section>
 
-    <section class="trust">
+    <section class="trust reveal fade-up">
         <div class="container">
             <div class="trust-header">
                 <h3>Han Confiado en Mi Experiencia</h3>
             </div>
             <div class="trust-logos">
-                <div class="trust-logo">📱 TELEFÓNICA</div>
-                <div class="trust-logo">📞 CLARO</div>
-                <div class="trust-logo">🏥 SAN PABLO</div>
-                <div class="trust-logo">⛽ REPSOL</div>
-                <div class="trust-logo">🌅 FELIZ HORIZONTE</div>
+                <!-- Usamos texto estilizado como logos para mantener simplicidad pero mejora visual -->
+                <div class="trust-logo corporate">TELEFÓNICA</div>
+                <div class="trust-logo corporate">CLARO</div>
+                <div class="trust-logo corporate">SAN PABLO</div>
+                <div class="trust-logo corporate">REPSOL</div>
+                <div class="trust-logo corporate">FELIZ HORIZONTE</div>
             </div>
         </div>
     </section>
 
     <section id="experiencia" class="experience">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal fade-up">
                 <h2 class="section-title">¿Por Qué Trabajar Conmigo?</h2>
                 <p class="section-subtitle">No soy un junior aprendiendo con tu proyecto. Soy un senior que ya resolvió
                     problemas más complejos que el tuyo.</p>
             </div>
 
-            <div class="experience-card">
+            <div class="experience-card reveal fade-up">
                 <div class="experience-header">
                     <div class="experience-icon">🎯</div>
                     <div>
@@ -100,13 +106,12 @@
                         <p>He trabajado 16 años en <span class="highlight">proyectos críticos para empresas Fortune
                                 500</span>: sistemas comerciales de Telefónica, gestión de estaciones de servicio para
                             Repsol, reportería para Clínica San Pablo.</p>
-                        <p style="margin-top: 12px;">Ahora llevo esa <span class="highlight">calidad enterprise</span> a
+                        <p class="mt-4">Ahora llevo esa <span class="highlight">calidad enterprise</span> a
                             negocios que quieren soluciones profesionales sin el costo de una consultora grande.</p>
                     </div>
                 </div>
 
-                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 24px; color: #0f172a;">Stack Tecnológico
-                    Senior</h4>
+                <div class="tech-stack-title">Stack Tecnológico Senior</div>
 
                 <div class="tech-stack">
                     <div class="tech-category">
@@ -159,28 +164,27 @@
 
     <section id="proyectos" class="case-study">
         <div class="container">
-            <div class="section-header" style="color: white;">
-                <h2 class="section-title" style="color: white;">Caso de Éxito: Transformación Digital Completa</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Cómo llevé un consultorio tradicional
+            <div class="section-header reveal fade-up text-white">
+                <h2 class="section-title text-white">Caso de Éxito: Transformación Digital Completa</h2>
+                <p class="section-subtitle text-white-muted">Cómo llevé un consultorio tradicional
                     a la era digital con soluciones enterprise</p>
             </div>
 
-            <div class="case-study-card">
+            <div class="case-study-card reveal fade-up">
                 <div class="case-study-header">
                     <div class="case-logo">🌅</div>
                     <div>
                         <h3>Feliz Horizonte - Consultorio Psicológico</h3>
-                        <p style="color: rgba(255,255,255,0.7); margin: 0;">Digitalización completa de operaciones</p>
+                        <p class="case-study-role">Digitalización completa de operaciones</p>
                     </div>
                 </div>
 
-                <p style="font-size: 18px; margin-bottom: 32px; color: rgba(255,255,255,0.9);">
+                <p class="case-study-intro">
                     <strong>El Desafío:</strong> Un consultorio exitoso perdiendo oportunidades por procesos 100%
                     manuales. Sin presencia digital, sin automatización, sin datos organizados.
                 </p>
 
-                <h4 style="font-size: 24px; font-weight: 700; margin-bottom: 24px;">Soluciones Implementadas con Visión
-                    Enterprise:</h4>
+                <h4 class="case-study-subtitle">Soluciones Implementadas con Visión Enterprise:</h4>
 
                 <div class="solutions-grid">
                     <div class="solution-card">
@@ -205,25 +209,18 @@
                     </div>
                 </div>
 
-                <div
-                    style="background: rgba(34, 197, 94, 0.1); border-left: 4px solid #22c55e; padding: 32px; border-radius: 12px; margin: 40px 0;">
-                    <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 16px; color: #22c55e;">Resultados
-                        Reales:</h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 8px 0; color: rgba(255,255,255,0.9);">✓ Atención 24/7 sin contratar personal
-                            adicional</li>
-                        <li style="padding: 8px 0; color: rgba(255,255,255,0.9);">✓ 0% errores en agendamiento (antes
-                            15-20%)</li>
-                        <li style="padding: 8px 0; color: rgba(255,255,255,0.9);">✓ Reducción del 70% en tiempo
-                            administrativo</li>
-                        <li style="padding: 8px 0; color: rgba(255,255,255,0.9);">✓ Incremento constante de pacientes
-                            vía Google Ads</li>
-                        <li style="padding: 8px 0; color: rgba(255,255,255,0.9);">✓ Negocio funcionando en piloto
-                            automático</li>
+                <div class="results-box reveal fade-up delay-200">
+                    <h4 class="results-title">Resultados Reales:</h4>
+                    <ul class="results-list">
+                        <li>✓ Atención 24/7 sin contratar personal adicional</li>
+                        <li>✓ 0% errores en agendamiento (antes 15-20%)</li>
+                        <li>✓ Reducción del 70% en tiempo administrativo</li>
+                        <li>✓ Incremento constante de pacientes vía Google Ads</li>
+                        <li>✓ Negocio funcionando en piloto automático</li>
                     </ul>
                 </div>
 
-                <div class="testimonial">
+                <div class="testimonial reveal fade-up delay-300">
                     <p class="testimonial-text">"Emerson no solo programó, entendió mi negocio mejor que nadie. Su
                         experiencia en empresas grandes se nota: la solución es robusta, escalable y profesional. El
                         consultorio ahora funciona solo, puedo enfocarme 100% en mis pacientes. Inversión recuperada en
@@ -236,13 +233,13 @@
 
     <section id="servicios" class="services">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal fade-up">
                 <h2 class="section-title">Servicios con Estándar Enterprise</h2>
                 <p class="section-subtitle">Soluciones profesionales, escalables y documentadas como las que construí
                     para las grandes empresas</p>
             </div>
 
-            <div class="services-intro">
+            <div class="services-intro reveal fade-up">
                 <h3>Dos Modalidades de Trabajo</h3>
                 <p><strong>Track Enterprise:</strong> Para empresas medianas/grandes que necesitan sistemas robustos,
                     arquitectura escalable y documentación completa. Experiencia comprobada en entornos críticos.</p>
@@ -251,7 +248,7 @@
             </div>
 
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card reveal fade-up delay-100">
                     <div class="service-icon">🏢</div>
                     <h3>Sistemas de Gestión Empresarial</h3>
                     <p>Desarrollo de software a medida para gestión interna: CRM, ERP, sistemas de inventario,
@@ -265,7 +262,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card reveal fade-up delay-200">
                     <div class="service-icon">☁️</div>
                     <h3>Migración y Modernización Cloud</h3>
                     <p>Llevo tus sistemas legacy a la nube (Azure). ETL pipelines, integración de datos, automatización
@@ -279,7 +276,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card reveal fade-up delay-300">
                     <div class="service-icon">🤖</div>
                     <h3>Automatización Inteligente</h3>
                     <p>Identifico procesos manuales costosos y los automatizo: chatbots, integraciones, workflows. ROI
@@ -293,7 +290,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card reveal fade-up delay-100">
                     <div class="service-icon">🔍</div>
                     <h3>Auditoría y Consultoría Técnica</h3>
                     <p>Analizo tu infraestructura actual, identifico problemas y oportunidades. Plan de acción
@@ -307,7 +304,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card reveal fade-up delay-200">
                     <div class="service-icon">📊</div>
                     <h3>Business Intelligence & Reportería</h3>
                     <p>Convierto tus datos en información accionable. Dashboards ejecutivos, reportes automáticos,
@@ -321,7 +318,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card reveal fade-up delay-300">
                     <div class="service-icon">🚀</div>
                     <h3>Desarrollo Full Stack</h3>
                     <p>Aplicaciones web completas, APIs REST, integraciones. Stack moderno con la solidez de tecnologías
@@ -340,7 +337,7 @@
 
     <section id="contacto" class="cta-section">
         <div class="container">
-            <div class="cta-content">
+            <div class="cta-content reveal fade-up">
                 <h2>¿Tu Proyecto Merece un Senior?</h2>
                 <p>Si buscas un desarrollador junior para "probar", no soy tu persona. Pero si necesitas alguien que YA
                     resolvió problemas más complejos que el tuyo, hablemos.</p>
@@ -351,7 +348,7 @@
                         ayudarte más, y te daré un plan de acción claro. Sin compromiso. Sin letra pequeña.</p>
                 </div>
 
-                <p style="font-size: 17px; margin-bottom: 32px;">
+                <p class="cta-target-text">
                     <strong>¿Qué tipo de cliente ideal busco?</strong><br>
                     Empresas medianas que necesitan sistemas robustos, o negocios pequeños con visión grande que valoran
                     la calidad y están listos para invertir en soluciones que realmente funcionen.
@@ -360,10 +357,11 @@
                 <a href="mailto:emersonmadrid@felizhorizonte.pe" class="btn btn-primary">Agenda tu Consultoría
                     Gratuita</a>
 
-                <p style="font-size: 14px; margin-top: 24px; opacity: 0.7;">
+                <p class="cta-footer">
                     📧 emersonmadrid@felizhorizonte.pe | 📍 Lima, Perú
-                    </s </div>
+                </p>
             </div>
+        </div>
     </section>
 
     <footer>
