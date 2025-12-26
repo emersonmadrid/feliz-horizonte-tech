@@ -1186,16 +1186,14 @@ footer {
         height: 2px;
     }
 
-    /* Hero - Fit all content including CTAs in viewport */
+    /* Hero - Fill entire viewport without gaps */
     .hero {
-        padding-top: 80px;
-        /* Reduced from 100px */
-        padding-bottom: 30px;
-        /* Reduced from 60px */
+        padding-top: 90px;
+        padding-bottom: 40px;
         min-height: 100vh;
-        /* Force full viewport height */
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        /* Changed from center to start */
         text-align: center;
     }
 
@@ -1213,20 +1211,15 @@ footer {
 
     .hero h1 {
         font-size: 32px;
-        /* Reduced from 36px */
-        margin-bottom: 15px;
-        /* Reduced from 20px */
+        margin-bottom: 18px;
         line-height: 1.2;
         padding: 0 10px;
     }
 
     .hero p {
         font-size: 15px;
-        /* Reduced from 16px */
-        margin-bottom: 20px;
-        /* Reduced from 30px */
+        margin-bottom: 24px;
         line-height: 1.5;
-        /* Tighter line height */
         padding: 0 10px;
     }
 
@@ -1236,10 +1229,9 @@ footer {
 
     .hero-buttons {
         flex-direction: column;
-        gap: 12px;
-        /* Reduced from 15px */
-        margin-bottom: 0;
-        /* Remove bottom margin */
+        gap: 14px;
+        margin-bottom: 30px;
+        /* Add bottom margin to fill space */
     }
 
     .btn-primary,
