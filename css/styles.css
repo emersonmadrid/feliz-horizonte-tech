@@ -624,6 +624,14 @@ nav a:hover::before {
     transform: scale(1.1);
 }
 
+/* Trusted By Section - Separate from Hero */
+.trusted-by {
+    padding: 60px 0;
+    background: rgba(26, 26, 26, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 /* Hero Visual - Decorative Element */
 .hero-visual {
     position: absolute;
@@ -1178,11 +1186,16 @@ footer {
         height: 2px;
     }
 
-    /* Hero - Ultra compact but readable */
+    /* Hero - Fit all content including CTAs in viewport */
     .hero {
-        padding-top: 100px;
-        padding-bottom: 50px;
-        min-height: auto;
+        padding-top: 80px;
+        /* Reduced from 100px */
+        padding-bottom: 30px;
+        /* Reduced from 60px */
+        min-height: 100vh;
+        /* Force full viewport height */
+        display: flex;
+        align-items: center;
         text-align: center;
     }
 
@@ -1199,16 +1212,21 @@ footer {
     }
 
     .hero h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
+        font-size: 32px;
+        /* Reduced from 36px */
+        margin-bottom: 15px;
+        /* Reduced from 20px */
         line-height: 1.2;
         padding: 0 10px;
     }
 
     .hero p {
-        font-size: 16px;
-        margin-bottom: 30px;
-        line-height: 1.6;
+        font-size: 15px;
+        /* Reduced from 16px */
+        margin-bottom: 20px;
+        /* Reduced from 30px */
+        line-height: 1.5;
+        /* Tighter line height */
         padding: 0 10px;
     }
 
@@ -1218,8 +1236,10 @@ footer {
 
     .hero-buttons {
         flex-direction: column;
-        gap: 15px;
-        margin-bottom: 30px;
+        gap: 12px;
+        /* Reduced from 15px */
+        margin-bottom: 0;
+        /* Remove bottom margin */
     }
 
     .btn-primary,
@@ -1231,12 +1251,24 @@ footer {
     }
 
     .trust-logos {
-        display: none;
-        /* Hide on mobile to prevent cramped first screen */
+        display: flex;
+        /* Show logos but they'll be below fold */
+        gap: 20px;
+        margin-top: 50px;
+        /* Extra spacing pushes below first screen */
+        margin-bottom: 40px;
+        justify-content: center;
     }
 
     .trust-logo {
         font-size: 12px;
+    }
+
+    /* Push trusted-by section completely below viewport */
+    .trusted-by {
+        margin-top: 100px;
+        /* Extra space to ensure it's below fold */
+        padding: 40px 0;
     }
 
     .hero-visual {
