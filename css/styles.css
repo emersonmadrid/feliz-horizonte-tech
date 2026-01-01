@@ -475,6 +475,75 @@ nav a:hover::before {
     text-align: center;
 }
 
+.announcement {
+    display: block;
+    width: 100%;
+    padding: 22px 32px;
+    border-radius: 16px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ffea75 0%, #ffd24b 50%, #ffb000 100%);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    color: #1a1200;
+    margin-bottom: 26px;
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.35),
+        0 0 30px rgba(255, 200, 0, 0.45);
+    max-width: 100%;
+    text-align: center;
+    line-height: 1.35;
+    position: relative;
+    overflow: hidden;
+    text-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.6),
+        0 6px 18px rgba(0, 0, 0, 0.25);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.65) 0 2px, transparent 3px),
+        radial-gradient(circle at 25% 70%, rgba(255, 255, 255, 0.55) 0 2px, transparent 3px),
+        radial-gradient(circle at 70% 25%, rgba(255, 255, 255, 0.55) 0 2px, transparent 3px),
+        radial-gradient(circle at 85% 65%, rgba(255, 255, 255, 0.5) 0 2px, transparent 3px),
+        linear-gradient(135deg, rgba(255, 224, 102, 0.95), rgba(255, 179, 0, 0.95));
+    background-blend-mode: screen, screen, screen, screen, normal;
+}
+
+.announcement-icons {
+    font-size: 24px;
+    letter-spacing: 0.2em;
+    margin: 0 12px;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.announcement::before,
+.announcement::after {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    opacity: 0.35;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0 6px, transparent 7px);
+    pointer-events: none;
+}
+
+.announcement::before {
+    top: -60px;
+    left: -40px;
+}
+
+.announcement::after {
+    bottom: -70px;
+    right: -50px;
+}
+
 .hero-badge {
     display: inline-flex;
     align-items: center;
